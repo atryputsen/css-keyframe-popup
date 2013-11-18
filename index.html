@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet" />
+    <title>Animation Keyframe Example</title>
+    </head>
+  <body>
+    <h2>Animation Keyframe Example</h2>
+    <button id="open">Open popup</button>
+    <div id="popup" class="close"><button id="close">Close popup</button></div>
+  </body>
+  <script src="popup.js"></script>
+  <script>
+    var popupEl = document.getElementById('popup');
+    var openEl = document.getElementById('open');
+    var closeEl = document.getElementById('close');
+    var popup = new Popup(popupEl);
+ 
+    openEl.addEventListener('click', openPopup);
+    closeEl.addEventListener('click', closePopup);
+    
+    function openPopup() {
+      if (!popup.isOpen) { 
+        popup.open(); 
+      } else {
+        popup.close(); 
+      }
+    }
+ 
+    function closePopup() {
+      if (popup.isOpen) { popup.close(); }
+    }
+  </script>
+</html>
